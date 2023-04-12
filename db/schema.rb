@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_10_101133) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_12_051619) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -60,10 +60,46 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_10_101133) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "student1s", force: :cascade do |t|
+    t.integer "mssv"
+    t.string "name_stu"
+    t.integer "mobile"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "studentns", force: :cascade do |t|
+    t.integer "mssv"
+    t.string "name_stu"
+    t.integer "mobile"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "string"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subject1s", force: :cascade do |t|
+    t.string "name_subject"
+    t.string "code_subject"
+    t.integer "credit"
+    t.integer "place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjectns", force: :cascade do |t|
+    t.string "name_subject"
+    t.string "code_subject"
+    t.integer "credit"
+    t.integer "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

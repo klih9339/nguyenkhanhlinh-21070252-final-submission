@@ -1,0 +1,38 @@
+<%= form_with(model: subject1) do |form| %>
+<% if subject1.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(subject1.errors.count, "error") %> prohibited this subject1 from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% subject1.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :name_subject, class: label_class %>
+          <%= form.text_field :name_subject, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :code_subject, class: label_class %>
+          <%= form.text_field :code_subject, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :credit, class: label_class %>
+          <%= form.number_field :credit, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :place, class: label_class %>
+          <%= form.number_field :place, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if subject1.persisted? %>
+<%= link_to "Cancel", subject1, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", subject1s_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>
