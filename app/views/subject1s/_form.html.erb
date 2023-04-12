@@ -13,7 +13,7 @@
 
   <div class="mb-6">
         <%= form.label :name_subject, class: label_class %>
-          <%= form.text_field :name_subject, class: input_class %>
+          <%= form.select :code_subject, options_from_collection_for_select(subject1.all, 'id', 'name', selected = student.code_subject), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :code_subject, class: label_class %>
